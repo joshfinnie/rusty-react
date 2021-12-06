@@ -3,15 +3,15 @@ import ReactDOM from "react-dom";
 
 const wasm = import("../build/rusty_react");
 
-wasm.then(m => {
+wasm.then((m) => {
   const App = () => {
     const [name, setName] = useState("");
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setName(e.target.value);
-    }
+    };
     const handleClick = () => {
       m.welcome(name);
-    }
+    };
 
     return (
       <>
